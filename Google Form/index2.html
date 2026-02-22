@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Melo Feedback Form</title>
+    <style>
+        .form-container {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-family: Arial, sans-serif;
+        }
+
+        .form-container h2 {
+            text-align: center;
+        }
+
+        .form-container label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .form-container input,
+        .form-container textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-container button {
+            margin-top: 15px;
+            width: 100%;
+            padding: 10px;
+            background-color: #06547c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #3897db;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Feedback Form</h2>
+
+    <form id="feedbackForm"
+        action="https://docs.google.com/forms/d/e/1FAIpQLSf5icFbxaMFN7dl3D47hJ3ErnRDLsP8q0O6W9OfU2kNHCRIvw/formResponse"
+        method="POST"
+        target="hidden_iframe">
+
+        <label>Name</label>
+        <input type="text" name="entry.1879069257" required>
+
+        <label>Email</label>
+        <input type="email" name="entry.1263620451" required>
+
+        <label>Feedback</label>
+        <textarea name="entry.916853533" rows="4" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <iframe name="hidden_iframe" style="display:none;"></iframe>
+    <p id="message"></p>
+</div>
+
+<script>
+    document.getElementById("feedbackForm").addEventListener("submit", function () {
+        document.getElementById("message").innerText =
+            "Thank you! Your feedback has been submitted successfully.";
+    });
+</script>
+
+</body>
+</html>
